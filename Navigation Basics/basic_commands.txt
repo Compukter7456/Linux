@@ -17,6 +17,7 @@
         ls -l - list all files in current working dir with permissions, user/group, size (in bytes), date and time of modification
         ls -a - list all files in current directory, including files with names that has . at the beginning (hidden files)
         ls -lh - list all files in current working dir with permissions, user/group, size (in B/KB/MB/GB/TB/... instead of bytes), date and time of modification
+        ls -lhai - list all files in current working dir with permissions, user/group, size (in B/KB/MB/GB/TB/... instead of bytes), date and time of modification and inode number
 
     ls can also show info about of specific file/directory:
         ls -lh /path/to/file - show info about set file
