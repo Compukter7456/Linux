@@ -1,0 +1,9 @@
+1) mv
+    Each file on linux is a hard link. It is pointer to the existing file inode
+    Examples:
+        - mv old.txt new.txt - rename file. On most linuxes it calls rename() syscall and renames directory entry's name
+        If rename() does not work - mv copies file with the set name and unlinks the old one 
+        - mv file.txt /home/user/some/directory - move file to the set directory
+        - mv ../../far_file.txt ../../../../tmp/ - move file to the set directory
+        - mv olddir newdir - rename directory
+        - mv dir /path/to/somewhere/else/ - move directory somewhere else 
