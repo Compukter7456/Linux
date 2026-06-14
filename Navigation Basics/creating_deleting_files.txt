@@ -1,0 +1,23 @@
+We can use touch or redirects to create a file
+
+1) touch
+    touch - Updates file's timestamp (if file exists). Else - creates file with a set name
+    Example:
+        - touch file.txt - creates file "file.txt"
+
+
+2) Redirects
+    Example:
+        - echo "smth" > file.txt
+        - cat smth.txt > file1.txt
+
+3) mkdir
+    mkdir - make directory. Creates directory, allows to set dir privileges or create parent dirs if needed
+    Example:
+        - mkdir test_dir - create directory "test_dir"
+        - mkdir temp -m 744 - create directory "temp" with 744 permissions
+        - mkdir -p /some/path/to/tmp - create directory "tmp" and parent dirs if needed
+
+4) rmdir
+    rmdir - remove directory. Removes empty directory
+    Use rm -r to remove directory with some files
