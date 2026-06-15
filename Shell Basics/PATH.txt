@@ -1,4 +1,0 @@
-PATH is an environment variable that contains paths to folders with executable programs. So we don't need to enter full path to thr program that we want to execute
-When we run ls - shell reads PATH than searches for "ls" binary in each path, set in PATH from the left to the right
-
-PATH looks like: /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
