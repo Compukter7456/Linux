@@ -1,0 +1,4 @@
+man is used to read manual about set command
+
+Usage: man command
+This will open extend description of our command

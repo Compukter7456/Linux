@@ -1,0 +1,41 @@
+In linux each userspace process has 3 basic streams (file descriptors):
+1) stdin - standart input (/proc/self/fd/0). It's stream which is used by process to read input data
+2) stdout - standart output (/proc/self/fd/1). It's file descriptor where process writes standart output
+3) stderr - standart error (/proc/self/fd/2). It's file descriptor where process writes error output
+
+We can use redirects to redirect process streams, here is some:
+
+1) cat file.txt > something.txt
+Redirects stdout of "cat file.txt" to something.txt
+This writes data from file.txt to something.txt, overwriting data in something.txt, meaning that all previous data there will be erased
+
+2) cat file.txt >> something.txt
+Redirects stdout of "cat file.txt" to something.txt
+This writes data from file.txt to the end of something.txt without overwriting anything there
+
+3) bash < script.sh
+Redirects script.sh to bash stdin
+bash reads script.sh as it's stdin
+
+4) Multiline stdin
+cat << EOF > file.txt
+Some 
+multi 
+line
+data
+here
+EOF
+
+cat reads data from stdin up till meeting EOF keyword and redirects it's stdout to file.txt
+
+5) ./program > file.txt 2>&1 
+Redirects stderr to the same stream as stdout and redirects stdout to file.txt. Meaning both stderr and stdout will write to file.txt
+
+6) ./program 2>&1
+Redirects stderr to stdout
+
+7) <& - redirects fds
+exec 3<&0         // Save stdin to /proc/self/fd/3
+exec 0< file.txt  // file.txt is redirected to stdin of current process
+exec 0<&3         // restore original stdin
+exec 3<&-         // close /proc/self/fd/3 
