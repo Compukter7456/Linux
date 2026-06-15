@@ -1,0 +1,23 @@
+Environment variables is variables whith which shell (or any other program) runs. 
+They contain config info such as:
+- different configs paths
+- home directory
+- current and previous working directory
+- log file paths
+- PATH
+- etc
+
+PATH is an environment variable that contains paths to folders with executable programs. So we don't need to enter full path to thr program that we want to execute
+When we run ls - shell reads PATH than searches for "ls" binary in each path, set in PATH from the left to the right
+PATH looks like: /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+
+To see your env vars - just print "env"
+
+We can add or delete env variables:
+- unset BASH_HISTORY - deletes BASH_HISTORY env var
+- export NEW_ENV_VAR="Some data here" - creates new env var
+But this changes will only last for program (and it's children) lifetime. After you restart it - all your changes is gone
+To add permanent env vars - add "export NEW_ENV_VAR="some data here" to ~/.bashrc or ~/.zshrc. This files ir run on each terminal startup
+
+We can read 1 env var using "echo $HISTFILE" (env var's name) or "env | grep 'HISTFILE'" or "printenv SHELL"
+We can run program with our env variable: "ENV_VAR=value ./program"
