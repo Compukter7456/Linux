@@ -1,0 +1,4 @@
+Archiving combines multiply files into one WITHOUT overall size change. This helps to easily transfer files
+Compressing tries to reduce file's size uzing different algorithms
+
+..
