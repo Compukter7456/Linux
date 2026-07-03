@@ -21,3 +21,6 @@ To add permanent env vars - add "export NEW_ENV_VAR="some data here" to ~/.bashr
 
 We can read 1 env var using "echo $HISTFILE" (env var's name) or "env | grep 'HISTFILE'" or "printenv SHELL"
 We can run program with our env variable: "ENV_VAR=value ./program"
+
+~$ export ENV_VAR=test   #sets environment variable
+~$ ENV_VAR=test          #sets shell's local variable
