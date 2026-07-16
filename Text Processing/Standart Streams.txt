@@ -1,0 +1,10 @@
+Processes in Linux uses file descriptors to communicate with user, other processes and network
+File descriptor is an integer from 0 to 1024 (by default, can be adjusted) that points to the object in kernel (/proc/PID/fd/x)
+Process can write and read data from the file descriptor
+
+Each Linux's process has 3 reserved fd by default:
+1) standart input (stdin) - 0
+2) standart output (stdout) - 1
+3) standart error (stderr) - 2
+
+We can communicate with other users by writing data to stdout of their terminal
