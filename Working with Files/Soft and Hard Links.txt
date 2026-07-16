@@ -1,0 +1,18 @@
+Each file in linux is a directory entry, pointer to the real object on the disk (inode)
+Inode - object that contains file's metadata and contents
+
+There are 2 types of files: Hard Link, Symbolic Link (Soft Link, Symlink)
+
+1) Hard Link
+It is a pointer to inode. It shows inode's size, privileges, owner and other data 
+The same inode can have multiply hard links. Inode dissapears when it has zero hard links and zero opened fds
+Process can create file (open()), than delete (unlink()) it, inode will be accessible at /proc/PID/fd/x without any hard links
+
+ln file.txt hard_link.txt     # Create new hard link
+ls -l file.txt                # Counter on the left shows ammount of hard links
+
+2) Soft Link
+Soft Link is a separate file that contains full path to the hard link
+If hard link is moved - soft link becomes "tangling"
+
+ln -s file.txt soft_link.txt  # Create soft link to the file.txt

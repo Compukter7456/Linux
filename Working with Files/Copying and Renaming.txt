@@ -1,0 +1,6 @@
+1) cp
+- file.txt file1.txt             # Copy file.txt to file1.txt
+
+2) mv 
+- mv file.txt /path/to/file.txt  # Move file.txt to the new location
+- mv file.txt newfile.txt        # Rename file

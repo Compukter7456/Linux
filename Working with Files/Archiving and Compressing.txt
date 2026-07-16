@@ -1,4 +1,39 @@
 Archiving combines multiply files into one WITHOUT overall size change. This helps to easily transfer files
 Compressing tries to reduce file's size uzing different algorithms
 
-..
+1) 7z
+7z a file1 dir1/ file2                        # compress and archive set files
+7z x archive.7z -o /path/to/dir               # extract and decompress archive with saved files structure to the set dir
+7z e archive.7z -o /path/to/dir               # extract and decompress archive to the set dir without saving files structure
+7z l archive.7z                               # see contents without extracting
+7z a -p archive.7z file1 dir1/ file2          # compress, archive and encrypt set files 
+7z a -p archive.7z file1 dir1/ file2 -mhe=o   # compress, archive and encrypt (including files' names) set files 
+
+2) tar (without compressing)
+tar -cvf archive.tar file1 file2 dir/      # archive set files/dirs
+tar -xvf archive.tar                       # extract
+tar -tvf archive.tar                       # see contents without extracting
+tar -xvf archive.tar -C /path/to/dir       # extract to the set dir
+tar -czvf archive.tar.gz file1.txt dir1/   # compress and archive set files/dirs
+tar -xzvf archive.tar.gz -C /path/to/dir   # extract and decompress files to the set directory
+
+Flags:
+c - create
+x - extract
+v - verboose
+f - file
+t - list
+z - gzip
+
+3) gzip
+gzip -6 file.txt      # compress set file with compression level 6 (from 1 to 9). Original file is deleted
+gzip -6 -k file.txt   # compress set file with compression level 6 (from 1 to 9) without deleting original
+gunzip file.gz        # decompress set file
+
+4) zip
+zip archive.zip file1 file2       # compress and archive set files
+zip -r archive.zip dir/           # compress and archive directory recursively
+zip -e archive.zip file1 file2    # compress, archive and encrypt (ZipCrypto) set files
+unzip archive.zip                 # extract and decompress archive
+unzip archive.zip -d /path        # extract and decompress archive to the set dir
+unzip -l archive.zip              # see contents without extracting
